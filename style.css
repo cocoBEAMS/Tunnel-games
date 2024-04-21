@@ -1,0 +1,78 @@
+html {
+  height: 100%; /* This ensures the body takes up the full height */
+  display: flex; /* Enables flexbox for the body */
+  flex-direction: column; /* Stacks content vertically */
+  background-color: #006400; /* Dark green color */
+}
+
+body {
+  /* Remove default margins */
+  margin: 0;
+  /* Add some content to push footer down (optional) */
+  padding-bottom: 100px; /* Adjust padding as needed */
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: white; /* Adjust text color for better visibility on dark background */
+}
+
+h1 {
+  font-family: 'Jersey 25', sans-serif;
+  color: white; /* Adjust text color for better visibility on dark background */
+}
+
+footer {
+  font-family: 'Rubik', sans-serif;
+  /* Move footer to bottom and center horizontally */
+  margin-top: auto;
+  text-align: center; /* Center content within footer */
+  color: white; /* Adjust text color for better visibility on dark background */
+}
+
+/* Style the navbar with blur effect */
+nav {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 10px; /* Add some padding */
+  display: flex; /* Make links display horizontally */
+  backdrop-filter: blur(5px); /* Apply blur effect */
+  /* Improve text readability (optional) */
+  color: white;
+}
+
+nav a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent (nav) */
+  margin-right: 20px; /* Add space between links */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+}
+
+nav a:hover {
+  color: #ccc; /* Change text color on hover */
+}
+
+/* Style the Play Now button with hover effects */
+.play-button {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; /* Indicate clickable behavior */
+  border-radius: 5px; /* Add rounded corners */
+  margin-top: 20px; /* Add space between button and title */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font for button text */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Add transition effects */
+}
+
+.play-button:hover {
+  transform: translateY(-5px); /* Move button up on hover */
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+.play-button:active {
+  transform: translateY(2px); /* Slight bounce down on click */
+}
