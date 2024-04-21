@@ -53,7 +53,7 @@ nav a:hover {
 
 /* Style the Play Now button with hover effects */
 .play-button {
-  background-color: #4CAF50; /* Green color */
+  background-color: #ff7300; /* Green color */
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -70,7 +70,7 @@ nav a:hover {
 
 .play-button:hover {
   transform: translateY(-5px); /* Move button up on hover */
-  background-color: #3e8e41; /* Darker green on hover */
+  background-color: #2bff00; /* Darker green on hover */
 }
 
 .play-button:active {

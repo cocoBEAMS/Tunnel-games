@@ -21,6 +21,11 @@ h1 {
   font-family: 'Jersey 25', sans-serif;
   color: white; /* Adjust text color for better visibility on dark background */
 }
+li {
+  font-family: 'Jersey 25', sans-serif;
+  color: white; /* Adjust text color for better visibility on dark background */
+}
+
 
 footer {
   font-family: 'Rubik', sans-serif;
