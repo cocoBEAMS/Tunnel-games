@@ -81,4 +81,18 @@ nav a:hover {
 .play-button:active {
   transform: translateY(2px); /* Slight bounce down on click */
 }
+/* Style the logo image */
+.logo {
+  width: 50px; /* Adjust width as needed */
+  height: 50px; /* Adjust height as needed */
+  margin-right: 20px; /* Add some space between logo and links */
+}
+
+/* Style the navigation container */
+.nav-container {
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Align items vertically in the flexbox */
+}
+
+/* Rest of your CSS code remains the same */
 
