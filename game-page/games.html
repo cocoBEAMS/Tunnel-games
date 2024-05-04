@@ -1,40 +1,65 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Hexagon's Arcade</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Containers</title>
+  <style>
+    
+
+    .game-container {
+      display: inline-block; /* Enables side-by-side containers */
+      margin: 10px; /* Adjust spacing between containers */
+      width: 250px; /* Set container width */
+      border: 1px solid #ddd; /* Adds a thin border */
+      border-radius: 5px; /* Rounded corners for a softer look */
+      overflow: hidden; /* Ensures image fits within container */
+      /* Optional: Add a subtle shadow for depth */
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      cursor: pointer; /* Changes cursor to pointer on hover */
+    }
+
+    .game-container img {
+      width: 100%; /* Image fills container width */
+    }
+
+    .game-container figcaption {
+      /* Positions title below the image */
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px; /* Adjust title area height */
+      background-color: orange;
+      color: white; /* Text color for title */
+      text-align: center; /* Centers title horizontally */
+      padding: 10px; /* Adjust padding inside title area */
+      margin: 0; /* Removes default margins */
+      font-family: 'Titan One', sans-serif; /* Sets font to Titan One */
+    }
+
+    /* Apply hover effect (optional) */
+    .game-container:hover {
+      opacity: 0.8; /* Reduces opacity on hover */
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap">
 </head>
-  
-
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="">Games</a>
-    <a href="#">About Us</a>
-     <a href="https://classoco.vercel.app">Proxy</a>
-  </nav>
+  <figure class="game-container" onclick="window.location.href='games/Stickmanhook';">
+    <img src="images/stick-man-hook-min.webp" alt="Game Image Description">
+    <figcaption>Stickman Hook</figcaption>
+  </figure>
 
-  <br />
-  <center>
-    <h1>Games:</h1>
-     <a href="Slope/" class="play-button">Slope</a>
-     <a href="Minecraft/" class="play-button">Minecraft</a>
-     <a href="1v1.lol/" class="play-button">1v1.lol</a>
-     <a href="Dodge Miner/" class="play-button">Doge Miner</a>
-    <a href="Monkey Mart/" class="play-button">Monkey Mart</a>
-    <a href="Subway Surfers/" class="play-button">Subway Surfers</a>
-    <a href="Stickmanhook/" class="play-button">Stickman Hook ⚡️* Means popular</a>
-    <a href="Rocket League/" class="play-button">Rocket League</a>
-   
-
-      </a>
-    </div>
-  </center>
-
+  <figure class="game-container" onclick="window.location.href='games/Dodge Miner';">
+    <img src="images/Dodge Miner.png" alt="Another Game Image Description">
+    <figcaption>Dodge Miner</figcaption>
+  </figure>
+  <figure class="game-container" onclick="window.location.href='games/Dodge Miner';">
+    <img src="images/Dodge Miner.png" alt="Another Game Image Description">
+    <figcaption>Another Image Title</figcaption>
+  </figure>
 </body>
-
 </html>
