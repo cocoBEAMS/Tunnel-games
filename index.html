@@ -6,29 +6,23 @@
   <meta name="viewport" content="width=device-width">
   <title>Hexagon's Arcade</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 </head>
- 
 
- 
-
-
-
-
-  
 
 <body>
-  <body>
   <nav class="nav-container">
-    
-    </div>
+    <button id="dark-mode-toggle" class="dark-mode-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
     <img src="images/hexagon.png" alt="Hexagon's Arcade Logo" class="logo">
 
     <a href="">Home</a>
     <a href="https://darwig.vercel.app">Games</a>
     <a href="about.html">About Us</a>
     <a href="https://classoco.vercel.app">Proxy</a>
-     <a href="https://hexagon.cronitorstatus.com/">status</a>
+    <a href="https://hexagon.cronitorstatus.com/">status</a>
   </nav>
 
   <br />
@@ -44,37 +38,45 @@
   <center>
     <li>The new and improved version of Game Pilot!</li>
     <center/>
-       <li>Added with proxy, and more games!</li>
-      <center/>
-         <a href="suggest.html" class="play-button">Suggest something</a>
-         <a href="https://discord.gg/ktSC7sM7" class="play-button">Join the Discord</a>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <li>Added with proxy, and more games!</li>
+    <center/>
+    <a href="suggest.html" class="play-button">Suggest something</a>
+    <a href="https://discord.gg/ktSC7sM7" class="play-button">Join the Discord</a>
+    <a href="links.html" class="play-button">Links</a>
   </center>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
   <center>
     <h1>Why us?</h1>
     <center/>
-      <p>Well, we have no ads, we don't track you so you are completely anonymous, and it's simple to play games here! You just click on the "Play" button, or click on "games" on the navbar, and click on a game! And remember, we are just starting so we aren't perfect. Anyways, Take care!
-</p>
+    <p>Well, we have no ads, we don't track you so you are completely anonymous, and it's simple to play games here! You just click on the "Play" button, or click on "games" on the navbar, and click on a game! And remember, we are just starting so we aren't perfect. Anyways, Take care!
+    </p>
   </center>
   <center>
     <a href="about.html" class="play-button">Explore more</a>
     <center/>
-      <br/>
-      <h1>Our Partners:</h1>
+    <br/>
+    <h1>Our Partners:</h1>
   </center>
   <br/>
-    <h1/>Potato HQ.</h1>
-    <center/>
-      <p>If you love chromebook gaming, as well as proxy links, this is the place to go! Go visit them at potatohq.us.to Happy playing!</p>
+  <h1/>Potato HQ.</h1>
+  <center/>
+  <p>If you love chromebook gaming, as well as proxy links, this is the place to go! Go visit them at potatohq.us.to Happy playing!</p>
   <br/>
 
 </body>
 <footer>&copy; 2024 Xenon Labs, and Elemental Mercury</footer>
-      
- 
 
+</html>
+    <script>
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const body = document.body;
 
+      darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+      });
+    </script>

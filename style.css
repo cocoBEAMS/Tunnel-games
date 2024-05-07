@@ -95,3 +95,24 @@ nav a:hover {
 }
 
 /* Rest of your CSS code remains the same */
+.dark-mode-toggle {
+  background: none; /* Remove default button styling */
+  border: none;
+  padding: 0 10px; /* Add some padding */
+  color: inherit; /* Inherit color from navbar */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+.dark-mode-toggle i {
+  font-size: 20px; /* Adjust icon size */
+}
+body.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+.dark-mode a {
+  color: #eee;
+}
+
+/* Add more styles for other elements as needed */
