@@ -1,13 +1,13 @@
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        1000
-    )
-});
+const input = document.querySelector('input');
+const games = document.querySelectorAll('#games img');
 
-
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
+input.addEventListener('input', () => {
+  const searchTerm = input.value.toLowerCase();
+  games.forEach(game => {
+    if (game.alt.toLowerCase().includes(searchTerm)) {
+      game.style.display = 'block';
+    } else {
+      game.style.display = 'none';
+    }
+  });
 });
