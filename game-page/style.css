@@ -1,0 +1,30 @@
+body {
+  background-color: green;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.image-box {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: orange;
+  text-decoration: none; /* removes underline from link */
+  cursor: pointer; /* changes cursor to hand on hover */
+  text-align: center;
+  border-radius: 10px; /* Adds rounded corners */
+}
+
+.image-box img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.image-box p {
+  margin-top: 5px; /* Adds space between image and title */
+}
+
+/* Adjust width and height for image boxes as needed */
