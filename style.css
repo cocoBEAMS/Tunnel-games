@@ -2,7 +2,14 @@ html {
   height: 100%; /* This ensures the body takes up the full height */
   display: flex; /* Enables flexbox for the body */
   flex-direction: column; /* Stacks content vertically */
-  background-color: #006400; /* Dark green color */
+  body {
+    /* Remove default margins */
+    margin: 0;
+    /* Add some content to push footer down (optional) */
+    padding-bottom: 100px; /* Adjust padding as needed */
+    background-image: url("images/hexagon-bg.png"); /* Replace with your image path */
+  }
+
 }
 
 body {
@@ -178,6 +185,7 @@ body.dark-mode {
 .image-container:hover {
   transform: rotate(5deg);  /* Adjust rotation angle as desired */
 }
+
 
 
 /* Add more styles for other elements as needed */
