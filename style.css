@@ -7,10 +7,13 @@ html {
     margin: 0;
     /* Add some content to push footer down (optional) */
     padding-bottom: 100px; /* Adjust padding as needed */
-    background-image: url("images/hexagon-bg.png"); /* Replace with your image path */
+    background-color: #006400; /* Dark green color */
   }
-
 }
+
+/* Rest of your CSS code remains the same */
+
+
 
 body {
   /* Remove default margins */
@@ -18,6 +21,8 @@ body {
   /* Add some content to push footer down (optional) */
   padding-bottom: 100px; /* Adjust padding as needed */
 }
+
+
 
 p {
   font-family: 'Roboto', sans-serif;
@@ -121,70 +126,26 @@ body.dark-mode {
 .dark-mode a {
   color: #eee;
 }
-.image-container {
-  display: inline-block;
-  margin: 10px;
-  width: 150px;
-  height: 150px;
-  background-color: orange;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
+.image-box {
+  width: 400px; /* Adjust width for longer rectangle */
+  height: 200px; /* Adjust height as needed */
+  /* ... other styles ... */
+}
+.image-box {
+  width: 200px; /* Adjust width as needed */
+  height: 150px; /* Adjust height as needed */
+  background-image: url("placeholder.jpg"); /* Placeholder image */
+  background-size: cover; /* Scales image to fill container */
+  background-position: center; /* Centers image */
+  border-radius: 10px; /* Adjust corner roundness */
+  overflow: hidden; /* Hides overflowing image parts */
+  transition: all 0.2s ease-in-out; /* Optional hover effect */
 }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;  /* Added transition for smooth rotation */
+.image-box figcaption {
+  /* Styles for caption positioning and appearance */
 }
 
-.image-container a {
-  text-decoration: none;
-  display: block;
-}
-
-.image-container {
-  display: inline-block;
-  margin: 10px;
-  width: 150px;
-  height: 150px;
-  background-color: orange;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease-in-out;  /* Transition for container rotation */
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-container a {
-  text-decoration: none;
-  display: block;
-}
-
-.image-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  background-color: orange;
-  color: white;
-  text-align: center;
-  line-height: 20px;
-  font-size: 1rem;
-  font-family: sans-serif;
-}
-
-/* Hover effect for container rotation */
-.image-container:hover {
-  transform: rotate(5deg);  /* Adjust rotation angle as desired */
-}
 
 
 
