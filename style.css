@@ -8,12 +8,11 @@ html {
     /* Add some content to push footer down (optional) */
     padding-bottom: 100px; /* Adjust padding as needed */
     background-color: #006400; /* Dark green color */
+    color: black; /* Change all text color to black */
   }
 }
 
 /* Rest of your CSS code remains the same */
-
-
 
 body {
   /* Remove default margins */
@@ -22,29 +21,27 @@ body {
   padding-bottom: 100px; /* Adjust padding as needed */
 }
 
-
-
 p {
   font-family: 'Roboto', sans-serif;
-  color: white; /* Adjust text color for better visibility on dark background */
+  color: black; /* Change paragraph text color to black */
 }
 
 h1 {
   font-family: 'Jersey 25', sans-serif;
-  color: white; /* Adjust text color for better visibility on dark background */
-}
-li {
-  font-family: 'Jersey 25', sans-serif;
-  color: white; /* Adjust text color for better visibility on dark background */
+  color: black; /* Change heading text color to black */
 }
 
+li {
+  font-family: 'Jersey 25', sans-serif;
+  color: black; /* Change list item text color to black */
+}
 
 footer {
   font-family: 'Rubik', sans-serif;
   /* Move footer to bottom and center horizontally */
   margin-top: auto;
   text-align: center; /* Center content within footer */
-  color: white; /* Adjust text color for better visibility on dark background */
+  color: black; /* Change footer text color to black */
 }
 
 /* Style the navbar with blur effect */
@@ -54,7 +51,7 @@ nav {
   display: flex; /* Make links display horizontally */
   backdrop-filter: blur(5px); /* Apply blur effect */
   /* Improve text readability (optional) */
-  color: white;
+  color: white; /* Keep navbar text white for better contrast */
 }
 
 nav a {
@@ -71,7 +68,7 @@ nav a:hover {
 /* Style the Play Now button with hover effects */
 .play-button {
   background-color: #4CAF50; /* Green color */
-  color: white;
+  color: white; /* Keep button text white for better contrast*/
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -93,6 +90,7 @@ nav a:hover {
 .play-button:active {
   transform: translateY(2px); /* Slight bounce down on click */
 }
+
 /* Style the logo image */
 .logo {
   width: 50px; /* Adjust width as needed */
@@ -110,43 +108,7 @@ nav a:hover {
 .dark-mode-toggle {
   background: none; /* Remove default button styling */
   border: none;
-  padding: 0 10px; /* Add some padding */
-  color: inherit; /* Inherit color from navbar */
-  cursor: pointer; /* Indicate clickable behavior */
+  padding: 0 10
+
 }
 
-.dark-mode-toggle i {
-  font-size: 20px; /* Adjust icon size */
-}
-body.dark-mode {
-  background-color: #222;
-  color: #ddd;
-}
-
-.dark-mode a {
-  color: #eee;
-}
-.image-box {
-  width: 400px; /* Adjust width for longer rectangle */
-  height: 200px; /* Adjust height as needed */
-  /* ... other styles ... */
-}
-.image-box {
-  width: 200px; /* Adjust width as needed */
-  height: 150px; /* Adjust height as needed */
-  background-image: url("placeholder.jpg"); /* Placeholder image */
-  background-size: cover; /* Scales image to fill container */
-  background-position: center; /* Centers image */
-  border-radius: 10px; /* Adjust corner roundness */
-  overflow: hidden; /* Hides overflowing image parts */
-  transition: all 0.2s ease-in-out; /* Optional hover effect */
-}
-
-.image-box figcaption {
-  /* Styles for caption positioning and appearance */
-}
-
-
-
-
-/* Add more styles for other elements as needed */
