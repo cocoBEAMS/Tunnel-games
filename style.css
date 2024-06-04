@@ -1,114 +1,357 @@
-html {
-  height: 100%; /* This ensures the body takes up the full height */
-  display: flex; /* Enables flexbox for the body */
-  flex-direction: column; /* Stacks content vertically */
-  body {
-    /* Remove default margins */
-    margin: 0;
-    /* Add some content to push footer down (optional) */
-    padding-bottom: 100px; /* Adjust padding as needed */
-    background-color: #006400; /* Dark green color */
-    color: black; /* Change all text color to black */
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
   }
 }
 
-/* Rest of your CSS code remains the same */
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 body {
-  /* Remove default margins */
-  margin: 0;
-  /* Add some content to push footer down (optional) */
-  padding-bottom: 100px; /* Adjust padding as needed */
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
-  color: black; /* Change paragraph text color to black */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-h1 {
-  font-family: 'Jersey 25', sans-serif;
-  color: black; /* Change heading text color to black */
+/*=============== CARD ===============*/
+.container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
 }
 
-li {
-  font-family: 'Jersey 25', sans-serif;
-  color: black; /* Change list item text color to black */
+.card__container {
+  display: grid;
+  row-gap: 3.5rem;
 }
 
-footer {
-  font-family: 'Rubik', sans-serif;
-  /* Move footer to bottom and center horizontally */
-  margin-top: auto;
-  text-align: center; /* Center content within footer */
-  color: black; /* Change footer text color to black */
+.card__article {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Style the navbar with blur effect */
-nav {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  padding: 10px; /* Add some padding */
-  display: flex; /* Make links display horizontally */
-  backdrop-filter: blur(5px); /* Apply blur effect */
-  /* Improve text readability (optional) */
-  color: white; /* Keep navbar text white for better contrast */
+.card__img {
+  width: 328px;
+  border-radius: 1.5rem;
 }
 
-nav a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from parent (nav) */
-  margin-right: 20px; /* Add space between links */
-  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+.card__data {
+  width: 280px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
 }
 
-nav a:hover {
-  color: #ccc; /* Change text color on hover */
+.card__description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
 }
 
-/* Style the Play Now button with hover effects */
-.play-button {
-  background-color: #4CAF50; /* Green color */
-  color: white; /* Keep button text white for better contrast*/
-  padding: 10px 20px;
-  text-align: center;
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+}
+
+.card__button {
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border: none;
-  cursor: pointer; /* Indicate clickable behavior */
-  border-radius: 5px; /* Add rounded corners */
-  margin-top: 20px; /* Add space between button and title */
-  font-family: 'Roboto', sans-serif; /* Use Roboto font for button text */
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Add transition effects */
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
 }
 
-.play-button:hover {
-  transform: translateY(-5px); /* Move button up on hover */
-  background-color: #3e8e41; /* Darker green on hover */
+.card__button:hover {
+  text-decoration: underline;
 }
 
-.play-button:active {
-  transform: translateY(2px); /* Slight bounce down on click */
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
 }
 
-/* Style the logo image */
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}
+/*=============== NAVBAR ===============*/
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* BASE STYLES */
+body {
+  background-color: #e8f0f7;
+  font-family: 'Inter', sans-serif;
+  min-height: 5000px;
+  padding-top: 60px;
+}
+
+/* NORMAL STYLES */
+.header {
+  background-color: rgb(19, 22, 26);
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
 .logo {
-  width: 50px; /* Adjust width as needed */
-  height: 50px; /* Adjust height as needed */
-  margin-right: 20px; /* Add some space between logo and links */
-}
-
-/* Style the navigation container */
-.nav-container {
-  display: flex; /* Enable flexbox */
-  align-items: center; /* Align items vertically in the flexbox */
-}
-
-/* Rest of your CSS code remains the same */
-.dark-mode-toggle {
-  background: none; /* Remove default button styling */
-  border: none;
-  padding: 0 10
 
 }
 
+.logo__img {
+  height: 50px;
+  display: block;
+}
+
+.nav {
+
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 40px;
+}
+
+.nav__item {
+
+}
+
+.nav__link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav__link::after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: rgb(0, 183, 255);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: all 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav__link:hover::after {
+  opacity: 1;
+}
+
+.btn {
+  color: #fff;
+  background-color: #0071e3;
+  padding: 7px 18px;
+  border-radius: 1000px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: rgb(28, 128, 228);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 650px) {
+  .header__content {
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    row-gap: 18px;
+  }
+
+  .nav__list {
+    column-gap: 20px;
+  }
+}
+}
+.footer {
+  background-color: #f2f2f2;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+.footer a {
+  color: #333;
+  text-decoration: none; /* removes underline */
+}
+
+.footer a:hover {
+  color: #999;
+}
