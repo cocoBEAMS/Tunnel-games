@@ -1,7 +1,3 @@
-const faviconInput = document.getElementById('favicon'); // This won't work here
-const pageTitleInput = document.getElementById('pageTitle'); // This won't work here
-const settingsForm = document.getElementById('settingsForm'); // This won't work here
-
 // Access settings from Local Storage
 const storedTitle = localStorage.getItem('pageTitle');
 const storedFaviconUrl = localStorage.getItem('faviconUrl');
@@ -23,8 +19,20 @@ function updatePageTitle() {
   }
 }
 
-// Call update functions on page load
+// Update on page load
 updateFavicon();
 updatePageTitle();
 
-// Settings form functionality can be implemented here (if needed on the settings page)
+const settingsForm = document.getElementById('settingsForm');
+settingsForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent default form submission
+
+  const newFaviconUrl = document.getElementById('newFaviconUrl').value;
+  const newPageTitle = document.getElementById('newPageTitle').value;
+
+  localStorage.setItem('pageTitle', newPageTitle);
+  localStorage.setItem('faviconUrl', newFaviconUrl);
+
+  updateFavicon();
+  updatePageTitle();
+});

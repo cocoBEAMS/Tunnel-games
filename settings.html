@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Settings</title>
+   <link rel="shortcut icon" id="tab-favicon" href="images/tunnel.png" />
+  <title>Tunnel l Settings</title>
   <link rel="stylesheet" href="settings.css">
+  <link rel="icon" href="" id="favicon">
 </head>
 <body>
-  
-  <div class="container">
-    <h1>Website Settings</h1>
-    <form id="settingsForm">
-      <label for="favicon">Favicon:</label>
-      <input type="file" id="favicon" accept=".ico, .png">
-      <br>
-      <label for="pageTitle">Page Title:</label>
-      <input type="text" id="pageTitle">
-      <br>
-      <button type="submit" id="saveSettings">Save Settings</button>
-      
-    </form>
-  </div>
-  <script src="settings.js"></script>
-</body>
+
+  <form id="settingsForm">
+    <label for="newFaviconUrl">Favicon URL:</label>
+    <input type="text" id="newFaviconUrl" name="newFaviconUrl">
+    <br>
+    <label for="newPageTitle">Page Title:</label>
+    <input type="text" id="newPageTitle" name="newPageTitle">
+    <br>
+    <button type="submit">Update Settings</button>
+  </form>
+
+  <script src="settings.js"></script>  </body>
 </html>
