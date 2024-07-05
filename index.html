@@ -61,6 +61,12 @@
       <br/>
       <br/>
       <br/>
+      <br/>
+      <br/>
+      <br/>
+      <center>
+           <input type="text" id="searchBar" class="search-bar" placeholder="Search for games...">
+       </center>
 
       <title>Tunnel Games</title>
       
@@ -469,6 +475,20 @@
 
                      <script src="settings.js"></script>
                      <script src="particles.js"></script>
-                       
+                       <script>
+                            document.getElementById('searchBar').addEventListener('input', function() {
+                                let filter = this.value.toLowerCase();
+                                let cards = document.querySelectorAll('.card__article');
+
+                                cards.forEach(card => {
+                                    let title = card.querySelector('.card__title').textContent.toLowerCase();
+                                    if (title.includes(filter)) {
+                                        card.style.display = '';
+                                    } else {
+                                        card.style.display = 'none';
+                                    }
+                                });
+                            });
+                        </script>
                   
 </html>
