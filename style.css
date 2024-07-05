@@ -365,20 +365,24 @@ body, html {
   height: 100%;
 }
 
-.search-bar {
+.search-container {
+  margin: 20px auto;
   width: 80%;
-  padding: 10px;
-  margin: 20px 0;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+#searchBar {
+  width: 100%;
+  padding: 12px 20px;
   font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
-.search-bar:focus {
-  border-color: #aaa;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+#searchBar:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.2);
 }
-
