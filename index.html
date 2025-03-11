@@ -18,6 +18,7 @@
             align-items: center;
             height: 100vh;
             background: #111;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         .popup-container {
@@ -90,11 +91,12 @@
 
     <div class="popup-container" id="popup">
         <span class="close-btn" onclick="closePopup()">✖</span>
-        <div class="popup-header">Welcome to Shallot Client</div>
-        <div class="popup-content">This site has moved on to another version. Click the button below to visit the other version or copy and paste this link: https://alliumxbeta.netlify.app</div>
+        <div class="popup-header">We are sorry.</div>
+        <div class="popup-content">This site has moved on to another version. DO NOT WORRY. ALLIUMXBETA WILL RESTORE ALL GAME DATA IN AN ARCHIVE ON THE ALLIUMXBETA. Click the button below to visit the other version or copy and paste this link: https://alliumxbeta.netlify.app.</div>
         <div class="popup-author">Tunnel Entertainment Services</div>
-        <button class="popup-button" onclick="https://alliumxbeta.netlify.app"">Visit Site</button>
+        <button class="popup-button" onclick="redirectToSite()">Visit Site</button>
     </div>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -108,8 +110,35 @@
         }
 
         function redirectToSite() {
-            window.location.href = "https://yourwebsite.com"; // Replace with your actual site URL
+            window.location.href = "https://alliumxbeta.netlify.app"; // Redirects to the new site
         }
+
+        // Block access to any page except the homepage
+        window.onload = function() {
+            const homeURL = "https://linearmath.netlify.app";  // The main homepage URL
+            const currentURL = window.location.href;
+
+            // Check if the current URL is anything other than the homepage
+            if (!currentURL.startsWith(homeURL)) {
+                window.location.href = homeURL;  // Redirect to the homepage
+            }
+
+            // Block any anchor tag navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default behavior (navigation)
+                });
+            });
+
+            // Block any form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent form submission
+                });
+            });
+        };
     </script>
 
 </body>
