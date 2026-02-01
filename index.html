@@ -1,145 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Popup</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+<meta charset="UTF-8" />
+<title>BLACKOUT Games</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #111;
-            overflow: hidden; /* Prevent scrolling */
-        }
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-        .popup-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 350px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            text-align: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease-in-out;
-        }
+<style>
+  /* ---------- PREMIUM ---------- */
+  .premium-section {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 0 28px;
+  }
 
-        .popup-container.active {
-            opacity: 1;
-            visibility: visible;
-        }
+  .premium-box {
+    text-align: center;
+    padding: 60px 32px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
 
-        .popup-header {
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-        }
+  .premium-box h2 {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
 
-        .popup-content {
-            margin: 15px 0;
-            color: #ccc;
-        }
+  .premium-box p {
+    max-width: 520px;
+    margin: 0 auto 26px;
+    color: var(--muted);
+    font-size: 15px;
+  }
 
-        .popup-author {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 15px;
-        }
+  .premium-btn {
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 1px solid var(--white);
+    background: transparent;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+  }
 
-        .popup-button {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 16px;
-            color: #fff;
-            background: #ff007f;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
+  .premium-btn:hover {
+    background: var(--white);
+    color: var(--bg);
+  }
 
-        .popup-button:hover {
-            background: #d6006b;
-        }
+/* ---------- ROOT ---------- */
+:root {
+  --bg: #000;
+  --card: #0c0c0c;
+  --border: #1f1f1f;
+  --white: #ffffff;
+  --muted: #9a9a9a;
+  --overlay: rgba(0,0,0,0.75);
+}
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 18px;
-            color: #fff;
-            cursor: pointer;
-        }
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
 
-    </style>
+/* ---------- BASE ---------- */
+body {
+  background: var(--bg);
+  color: var(--white);
+}
+
+/* ---------- NAV ---------- */
+.nav-wrapper {
+  padding: 28px;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  margin-left: 26px;
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  background: #111;
+  color: var(--white);
+}
+
+.nav-btn {
+  margin-left: 26px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: var(--white);
+  color: var(--bg);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 48px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #0a0a0a, #000);
+  border: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: 42px;
+  max-width: 600px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 26px;
+}
+
+.hero button {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  background: var(--white);
+  color: var(--bg);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ---------- FEATURED ---------- */
+.featured {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.featured h2 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.featured-card {
+  position: relative;
+  height: 320px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      135deg,
+      #111 25%,
+      #0b0b0b 25%,
+      #0b0b0b 50%,
+      #111 50%,
+      #111 75%,
+      #0b0b0b 75%
+    );
+  background-size: 48px 48px;
+}
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+.featured-overlay h3 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.featured-overlay p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.featured-overlay button {
+  align-self: flex-start;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: var(--white);
+  color: var(--bg);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- GRID ---------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 28px 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 34px;
+}
+
+/* ---------- CARD ---------- */
+.game-card {
+  position: relative;
+  height: 380px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--white);
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      135deg,
+      #111 25%,
+      #0b0b0b 25%,
+      #0b0b0b 50%,
+      #111 50%,
+      #111 75%,
+      #0b0b0b 75%
+    );
+  background-size: 40px 40px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--overlay);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.game-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.overlay p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.play-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: var(--white);
+  color: var(--bg);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.favorite {
+  font-size: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+  user-select: none;
+}
+
+.favorite.active {
+  opacity: 1;
+}
+  
+</style>
 </head>
+
 <body>
 
-    <div class="popup-container" id="popup">
-        <span class="close-btn" onclick="closePopup()">✖</span>
-        <div class="popup-header">We are sorry.</div>
-        <div class="popup-content">This site has moved on to another version. DO NOT WORRY. ALLIUMXBETA WILL RESTORE ALL GAME DATA IN AN ARCHIVE ON THE ALLIUMXBETA. Click the button below to visit the other version or copy and paste this link: https://alliumxbeta.netlify.app.</div>
-        <div class="popup-author">Tunnel Entertainment Services</div>
-        <button class="popup-button" onclick="redirectToSite()">Visit Site</button>
+<!-- NAV -->
+<div class="nav-wrapper">
+  <div class="navbar">
+    <div class="logo">BLACKOUT</div>
+    <div class="nav-links">
+      <a href="#">Games</a>
+      <a href="#">Favorites</a>
+      <a href="#">About</a>
+      <button class="nav-btn">Sign In</button>
     </div>
-    
+  </div>
+</div>
+  
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(() => {
-                document.getElementById("popup").classList.add("active");
-            }, 500);
-        });
+<!-- HERO -->
+<section class="hero">
+  <h1>Discover games worth your time.</h1>
+  <p>A curated collection of minimal, experimental, and high-quality games — all in one place.</p>
+  <button>Explore Games</button>
+</section>
 
-        function closePopup() {
-            document.getElementById("popup").classList.remove("active");
-        }
+<!-- FEATURED -->
+<section class="featured">
+  <h2>Featured Game</h2>
+  <div class="featured-card">
+    <div class="featured-image"></div>
+    <div class="featured-overlay">
+      <h3>Untitled Featured Game</h3>
+      <p>A hand-picked experience. Clean design. Pure gameplay.</p>
+      <button>Play Now</button>
+    </div>
+  </div>
+</section>
+  <section class="premium-section">
+    <div class="premium-box">
+      <h2>Apply for Premium</h2>
+      <p>
+        Premium members get early access to new games, exclusive features,
+        and a cleaner, ad-free experience.
+      </p>
+      <button class="premium-btn">Apply Now</button>
+    </div>
+  </section>
 
-        function redirectToSite() {
-            window.location.href = "https://alliumxbeta.netlify.app"; // Redirects to the new site
-        }
+<!-- GRID -->
+<div class="container">
+  <div class="grid" id="gameGrid"></div>
+</div>
 
-        // Block access to any page except the homepage
-        window.onload = function() {
-            const homeURL = "https://linearmath.netlify.app";  // The main homepage URL
-            const currentURL = window.location.href;
+  <script>
+  const games = [
+    { 
+      id: 1, 
+      title: "1v1.lol", 
+      desc: "Classic shooter game", 
+      url: "1v1.lol/",
+      image: "imagesgames/1v1.webp" // Replace with your image
+    },
+    { 
+      id: 2, 
+      title: "Untitled Game 2", 
+      desc: "Description goes here", 
+      url: "https://example.com/game2",
+      image: "https://via.placeholder.com/400x380.png?text=Game+2"
+    },
+    { 
+      id: 3, 
+      title: "Untitled Game 3", 
+      desc: "Description goes here", 
+      url: "https://example.com/game3",
+      image: "https://via.placeholder.com/400x380.png?text=Game+3"
+    }
+  ];
 
-            // Check if the current URL is anything other than the homepage
-            if (!currentURL.startsWith(homeURL)) {
-                window.location.href = homeURL;  // Redirect to the homepage
-            }
+  const grid = document.getElementById("gameGrid");
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-            // Block any anchor tag navigation
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default behavior (navigation)
-                });
-            });
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
 
-            // Block any form submissions
-            const forms = document.querySelectorAll('form');
-            forms.forEach(form => {
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent form submission
-                });
-            });
-        };
-    </script>
+    const isFav = favorites.includes(game.id);
+
+    card.innerHTML = `
+      <div class="game-image" style="background-image: url('${game.image}'); background-size: cover; background-position: center;"></div>
+      <div class="overlay">
+        <h3>${game.title}</h3>
+        <p>${game.desc}</p>
+        <div class="actions">
+          <button class="play-btn">Play</button>
+          <div class="favorite ${isFav ? "active" : ""}">★</div>
+        </div>
+      </div>
+    `;
+
+    const favBtn = card.querySelector(".favorite");
+    favBtn.onclick = () => {
+      favBtn.classList.toggle("active");
+
+      if (favorites.includes(game.id)) {
+        favorites.splice(favorites.indexOf(game.id), 1);
+      } else {
+        favorites.push(game.id);
+      }
+
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    };
+
+    const playBtn = card.querySelector(".play-btn");
+    playBtn.onclick = () => {
+      window.location.href = game.url;
+    };
+
+    grid.appendChild(card);
+  });
+  </script>
 
 </body>
 </html>
